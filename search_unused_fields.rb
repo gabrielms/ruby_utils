@@ -43,21 +43,15 @@ f.each do |linha|
    end
 
    campos_ireport << campo_ireport
-    # campo = ""
-    # index = f.upcase.index("$F{")
-    # index += 3
-    # for index in index..f.length - 1
-    #    break if f[index] == "}"
-    #    campo += f[index]
-    # end
-    
 end
 
 campos_ireport.flatten!
 campos_ireport.reject! { |c| c.empty? }
 
-puts campos_sql.inspect
+campos_ireport.map {|ci| ci.upcase! }
+campos_sql.map {|cs| cs.upcase! }
 
+puts campos_sql.inspect
 puts campos_ireport.inspect
 
 puts "Campos que podem ser removidos do SQL: "
