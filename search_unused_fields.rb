@@ -6,8 +6,7 @@ puts "Digite o nome do arquivo"
 
 diretorio_relatorios = "/home/gabriel/projects/ieducar/ieducar-utils/reports/jasperreports/"
 
-nome_arquivo = gets.chomp
-
+nome_arquivo = ARGV[0]
 
 f = File.open(diretorio_relatorios + nome_arquivo, 'r')
 
